@@ -1,0 +1,132 @@
+@use "../../Base.scss" as s;
+
+.cart {
+  padding: 30px 50px;
+
+  @include s.for-phone-only {
+    padding: 30px 10px;
+  }
+
+  .bottom {
+    display: flex;
+    gap: 30px;
+
+    @include s.for-tablet-landscape-up {
+      flex-direction: column;
+    }
+
+    .left {
+      flex: 4;
+
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--col-grey__3);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+
+      .left__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(176, 176, 176, 0.2);
+
+          .cartItem {
+            display: flex;
+            align-items: center;
+            width: 60%;
+            gap: 20px;
+
+            img {
+              width: 100px;
+              height: 100px;
+              border-radius: 10px;
+            }
+
+            span {
+              font-size: 14px;
+              text-align: justify;
+            }
+          }
+
+          .price {
+            p {
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+
+          .delete {
+            color: var(--pri-col);
+          }
+        }
+
+        .bottom {
+          .remove {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--pri-col);
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 2;
+
+      .top {
+        h2 {
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 16px;
+          border-bottom: 1px solid var(--col-grey__3);
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--col-grey__3);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        span {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        p {
+          font-size: 22px;
+          font-weight: 600;
+        }
+      }
+
+      .bottom {
+        .cartButton {
+          background-color: var(--pri-col);
+          color: var(--col-white__1);
+          font-size: 18px;
+          font-weight: 500;
+          border: none;
+          width: 100%;
+          padding: 10px 30px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

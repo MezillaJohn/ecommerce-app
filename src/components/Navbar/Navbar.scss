@@ -1,0 +1,140 @@
+@use "../../base.scss" as s;
+.navbar {
+  height: 60px;
+  background-color: #f7f7f7;
+
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &.show .nav-menu {
+      display: block;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      @include s.for-desktop-up {
+        gap: 15px;
+      }
+
+      @include s.for-tablet-landscape-up {
+        top: 12.7rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .center {
+      font-size: 30px;
+      letter-spacing: 10px;
+
+      @include s.for-desktop-up {
+        font-size: 25px;
+      }
+
+      @include s.for-phone-only {
+        letter-spacing: 5px;
+        font-size: 20px;
+      }
+
+      a {
+        font-family: "Hanalei Fill", cursive;
+        font-weight: 900;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      @include s.for-desktop-up {
+        gap: 15px;
+      }
+
+      @include s.for-tablet-landscape-up {
+        top: 6rem;
+      }
+
+      .icons {
+        display: flex;
+        gap: 15px;
+        color: #777;
+        align-items: center;
+
+        @include s.for-tablet-landscape-up {
+          position: absolute;
+          top: -35.5px;
+          left: 0;
+          right: 0;
+          background-color: var(--pri-col);
+          color: white;
+          padding: 0.3rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        .cartIcon {
+          position: relative;
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            background-color: #f7f7f7;
+            border-radius: 50%;
+            color: var(--pri-col);
+            position: absolute;
+            top: -8px;
+            left: 17px;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+
+      & > * {
+        font-size: 30px;
+      }
+
+      @include s.for-tablet-landscape-up {
+        display: block;
+      }
+    }
+
+    .nav-menu {
+      @include s.for-tablet-landscape-up {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 9000000;
+        background-color: #f7f7f7;
+      }
+    }
+
+    .nav-menu .item {
+      @include s.for-tablet-landscape-up {
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}

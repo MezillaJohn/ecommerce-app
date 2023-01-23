@@ -1,0 +1,105 @@
+@use "../../base.scss" as s;
+
+.slider {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+  background-color: rgb(153, 135, 120);
+  overflow-x: hidden;
+
+  @include s.for-phone-only {
+    height: calc(100vh - 60px);
+  }
+
+  .slider-content {
+    position: absolute;
+    top: 25%;
+    left: 3%;
+    z-index: 10000;
+    color: var(--col-white__1);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h1 {
+      font-size: 65px;
+      width: 15ch;
+      line-height: 1.2;
+
+      @include s.for-tablet-portrait-up {
+        font-size: 50px;
+      }
+      @include s.for-phone-only {
+        font-size: 45px;
+      }
+      @include s.for-small-phone-only {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      font-size: 25px;
+
+      @include s.for-tablet-portrait-up {
+        font-size: 20px;
+      }
+    }
+
+    button {
+      padding: 10px 30px;
+      width: fit-content;
+    }
+  }
+
+  .container {
+    width: 400vw;
+    height: 100%;
+    display: flex;
+    transition: all 1s ease;
+    position: relative;
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    img {
+      height: 100%;
+      width: 100vw;
+      object-fit: contain;
+
+      @include s.for-tablet-landscape-up {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .icons {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 30px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+
+    .icon {
+      color: var(--col-grey__3);
+      background-color: var(--col-grey__1);
+      opacity: 0.5;
+      width: 43px;
+      height: 40px;
+      border: solid 1px var(--col-grey__3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
